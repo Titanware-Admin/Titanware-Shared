@@ -1,0 +1,28 @@
+
+<!-- Banner Template -->
+<div *ngIf="config" class="banner-cntr {{ location }}" [@fadeInOut]="animationState">
+  <div class="card shadow {{ theme }}">
+
+    <!-- Banner Body -->
+    <div class="card-body row {{ alignment }}">
+
+      <!-- Custom Component -->
+      <div #CustomComponent *ngIf="config?.component" class="col-12"></div>
+
+      <!-- Message HTML -->
+      <div *ngIf="config?.message" class="banner-msg col-md-6 col-12" [innerHTML]="config.message"></div>
+
+      <!-- Buttons -->
+      <div class="d-flex justify-content-end col-md-6 mt-2 mb-2">
+        <div *ngFor="let button of config.buttons">
+          <button class="btn {{ button.themeClass }} ms-2 me-2" (click)="onClick(button)">{{ button.buttonText }}</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+

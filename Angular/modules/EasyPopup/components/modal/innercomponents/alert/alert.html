@@ -1,0 +1,20 @@
+<!-- Modal Header -->
+<div *ngIf="config.showHeader" class="modal-header {{ theme }}">
+  <i *ngIf="config.icon" class="{{ config.icon }} me-1"></i>
+  <h5 class="modal-title">{{ config?.title ? config.title : 'Modal Title' }}</h5>
+  <button title="Close" class="btn btn-close" (click)="close()"></button>
+</div>
+
+<!-- Modal Body -->
+<div class="modal-body">
+  <div *ngIf="config?.icon && config?.showIconInBody" class="d-flex justify-content-center align-items-center mb-3 {{ txtTheme }}"><i class="{{ config.icon }} fa-5x"></i></div>
+  <div *ngIf="config.customMessage" [innerHTML]="config?.customMessage ? config.customMessage() : (config?.message ? config.message : 'No Modal Message')"></div>
+  <div *ngIf="!config.customMessage" [innerHTML]="config?.message ? config.message : 'No Modal Message.'"></div>
+</div>
+
+<!-- Modal Footer -->
+<div *ngIf="config.showFooter" class="modal-footer">
+  <button class="btn w-100 {{ btnTheme }}" (click)="close()">
+    {{ config?.buttonText ? config.buttonText : 'Close' }}
+  </button>
+</div>

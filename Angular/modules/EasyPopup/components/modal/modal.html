@@ -1,0 +1,30 @@
+<!-- Modal Template -->
+<div *ngIf="config" class="modal-cntr" [@fadeInOut]="animationState">
+
+  <!-- Alert Modal -->
+  <div *ngIf="type == modalTypes.Alert" class="modal {{ size }}">
+    <modal-alert [setConfig]="config" (onClose)="close()" class="modal-content"></modal-alert>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div *ngIf="type == modalTypes.Confirmation" class="modal {{ size }}">
+    <modal-confirmation [setConfig]="config" (onClose)="close()" (onConfirm)="confirm()" class="modal-content"></modal-confirmation>
+  </div>
+
+  <!-- Custom Component Modal -->
+  <div *ngIf="type == modalTypes.CustomComponent" class="modal {{ size }}">
+    <modal-custom-component [setConfig]="config" (onClose)="close()" class="modal-content"></modal-custom-component>
+  </div>
+
+  <!-- Image Modal -->
+  <div *ngIf="type == modalTypes.Image" class="modal {{ size }}">
+    <modal-image [setConfig]="config" (onClose)="close()" class="modal-content"></modal-image>
+  </div>
+
+  <div *ngIf="config.fuzzyBackground" class="dark-overlay"></div>
+  <div *ngIf="config.closeOnOuterClick" class="click-overlay" (click)="close()"></div>
+
+</div>
+
+
+

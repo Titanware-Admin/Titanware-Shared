@@ -1,0 +1,24 @@
+<!-- Modal Header -->
+<div *ngIf="config.showHeader" class="modal-header {{ theme }}">
+  <i *ngIf="config.icon" class="{{ config.icon }} me-1"></i>
+  <h5 class="modal-title">{{ config?.title ? config.title : '' }}</h5>
+  <button title="Close" class="btn btn-close" (click)="close()"></button>
+</div>
+
+<!-- Modal Body -->
+<div class="modal-body">
+  <div *ngIf="config?.icon" class="d-flex justify-content-center align-items-center mb-3 {{ txtTheme }}"><i class="{{ config.icon }} fa-5x"></i></div>
+  <div *ngIf="config.customMessage" [innerHTML]="config?.customMessage ? config.customMessage() : (config?.message ? config.message : 'No Modal Message')"></div>
+  <div *ngIf="!config.customMessage" [innerHTML]="config?.message ? config.message : 'No Modal Message.'"></div>
+</div>
+
+<!-- Modal Footer -->
+<div class="modal-footer">
+  <button class="w-50 me-2 btn btn-secondary" (click)="close()">
+    {{ config?.closeButtonText ? config.closeButtonText : 'Close' }}
+  </button>
+  <button class="w-50 ms-2 btn {{ btnTheme }}" (click)="confirm()">
+    {{ config?.confirmButtonText ? config.confirmButtonText : 'Confirm' }}
+  </button>
+</div>
+

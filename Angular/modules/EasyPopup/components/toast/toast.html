@@ -1,0 +1,12 @@
+<!-- Toast Template -->
+<div *ngIf="config" class="card {{ theme }}" [@fadeInOut]="animationState">
+
+  <!-- Toast Body -->
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div *ngIf="config?.icon"><i class="{{ config.icon }} me-2"></i></div>
+      <div [innerHTML]="config.message"></div>
+    </div>
+  </div>
+
+</div>

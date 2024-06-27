@@ -1,0 +1,30 @@
+
+<!-- Widget Template -->
+<div *ngIf="config" class="widget-cntr {{ location }}" [@fadeInOut]="animationState">
+
+  <!-- Widget (Opened) -->
+  <div class="{{ size }}" [class.hidden]="!isOpen && !isOpening">
+    <div class="card {{ max }} shadow-lg" [@minmax]="(isOpen || isOpening) && !isClosing ? 'max' : 'min'">
+      <div class="card-header">
+        <div class="d-flex align-items-center">
+          <button class="btn btn-close ms-auto" (click)="onMinimize()"></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div #CustomComponent *ngIf="config?.component"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Widget (Closed) -->
+  <div class="card card-mini {{ min }} shadow-lg" [class.hidden]="isOpen || isOpening" (click)="onMaximize()">
+    <div class="card-body d-flex align-items-center justify-content-center p-0">
+      <i *ngIf="config?.icon" class="{{ config.icon }}"></i>
+    </div>
+  </div>
+
+  <button *ngIf="!isOpen && !isOpening" class="btn btn-close btn-mini" (click)="onClose()"></button>
+</div>
+
+
+

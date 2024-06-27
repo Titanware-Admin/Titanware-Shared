@@ -1,0 +1,112 @@
+
+.banner-top {
+  top: 0;
+}
+.banner-bottom {
+  bottom: 0;
+}
+.banner-cntr {
+  display: flex;
+  justify-content: center;
+  z-index: 97;
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  .card {
+    z-index: 100;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .banner-img {
+    text-shadow: 1px 1px 8px #fff;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+// Alignments
+.banner-content-left {
+  display: flex;
+  align-items: center;
+}
+.banner-content-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-content-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.banner-content-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Colors
+.banner-fuzzy {
+  position: relative;
+  color: #000;
+  background-color: rgba(0,0,0,0.2);
+  border: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: rgba(255,255,255,0.25);
+  }
+}
+.banner-success {
+  color: #fff;
+  background-color: #198754;
+  border-color: #198754;
+}
+.banner-warning {
+  color: #000;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.banner-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.banner-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.banner-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.banner-info {
+  color: #000;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+.banner-light {
+  color: #000;
+  background-color: rgb(250,250,250);
+  border-color: rgb(220,220,220);
+}
+.banner-dark {
+  color: #fff;
+  background-color: #111;
+  border-color: #111;
+}
+
+@media (max-width: 576px) {
+  .banner-cntr {
+    font-size: 0.8em;
+  }
+}

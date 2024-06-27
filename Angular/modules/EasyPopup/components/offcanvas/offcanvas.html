@@ -1,0 +1,20 @@
+<!-- Offcanvas Template -->
+<div *ngIf="config" class="offcanvas show {{ location }}" [@fadeInOut]="animationState" aria-labelledby="offcanvas" tabindex="-1"
+     [attr.data-bs-backdrop]="config?.closeOnOuterClick ? (config?.fuzzyBackground ? null : 'false') : 'static'"
+     [attr.data-bs-scroll]="config?.fuzzyBackground ? null : 'true'">
+
+  <!-- Header -->
+  <div *ngIf="isReady" class="offcanvas-header">
+    <h5 *ngIf="config?.title" class="offcanvas-title" id="offcanvasWithBothOptionsLabel">{{ config.title }}</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" (click)="onClose()"></button>
+  </div>
+
+  <!-- Custom Component -->
+  <div *ngIf="isReady" class="offcanvas-body">
+    <div #CustomComponent *ngIf="config?.component" class="col-12"></div>
+  </div>
+
+</div>
+
+<!-- Backdrop -->
+<div *ngIf="config?.fuzzyBackground" class="offcanvas-backdrop fade show" (click)="onBackdropClick()"></div>

@@ -1,0 +1,55 @@
+
+.toast-cntr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 97;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 30vw;
+}
+
+.card {
+  z-index: 1000;
+  margin-bottom: 0.5rem;
+}
+
+// Colors
+.toast-success {
+  color: #fff;
+  background-color: #6ab045;
+  border-color: #6ab045;
+}
+
+.toast-warning {
+  color: #222;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.toast-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.toast-primary {
+  color: #fff;
+  background-color: #183a5c;
+  border-color: #183a5c;
+}
+
+.toast-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.toast-info {
+  color: #222;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
