@@ -23,9 +23,10 @@ This repository offers the following features and benefits:
 ## Prerequisites
 Ensure you have the following prerequisites installed on your system:
 
-	- Node.js (for Angular examples)
-	- .NET SDK (for .NET examples)
-	- [Add other prerequisites as needed]
+	- Angular v17+ (for Angular examples)
+	- Bootstrap v5.3 (for Angular examples)
+	- .NET 7 SDK (for .NET examples)
+	- And More!
 
 ## License
 This repository is licensed. See the LICENSE file for more information.
